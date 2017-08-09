@@ -1,2 +1,23 @@
 This project serves as a playground to test 2D and 3D game code using SFML and
 OpenGL for DVG.
+
+* Install Directions
+
+* Install SFML 2.4.2
+  * Go to SFML download site, install SFML 2.4.2 64bit for MinGW and unzip it to C:\SFML\
+
+* Install cmake
+  * Go to Cmake download site and install cmake 3.9.0 msi
+
+* Install MinGW
+  * Follow link on SFML site to MinGW 6.1.0 and unzip it to C:\MinGW\
+
+* Install GLEW
+  * Go to GLEW download site and install glew-2.1.0 to C:\GLEW\
+
+* Build
+  * Make directory C:\build
+  * cd build
+  * run "cmake .."
+  * On success, run "mingw-make.exe"
+  * Run "myproject.exe"
