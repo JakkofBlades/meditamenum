@@ -22,7 +22,11 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 # Define sources and executable
 set(EXECUTABLE_NAME "myproject")
-add_executable(${EXECUTABLE_NAME} src/logger.cpp main.cpp)
+add_executable(${EXECUTABLE_NAME}
+  src/logger.cpp
+  src/input.cpp
+  src/game.cpp
+  main.cpp)
 
 # OpenGL
 find_package(OpenGL REQUIRED)

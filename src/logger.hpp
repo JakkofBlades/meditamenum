@@ -7,6 +7,8 @@
  *       stream will log to standard output, files and networks streams at the
  *       users discretion
  ******************************************************************************/
+#ifndef _LOGGER_H_
+#define _LOGGER_H_
 
 
 /*******************************************************************************
@@ -114,3 +116,5 @@ private:
 
 } // end namespace iris
 } // end namespace dahl
+
+#endif /* LOGGER_H */
