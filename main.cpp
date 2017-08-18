@@ -16,8 +16,8 @@
 // #pragma comment(lib,"sfml-network.lib")
 // #endif
 
-// #pragma comment(lib,"opengl32.lib")
-// #pragma comment(lib,"glu32.lib")
+#pragma comment(lib,"opengl32.lib")
+#pragma comment(lib,"glu32.lib")
 
 #include <iostream>
 
@@ -26,11 +26,14 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/OpenGL.hpp"
 
+#include "src/logger.hpp"
+
 ////////////////////////////////////////////////////////////
 /// Entry point of application
 ////////////////////////////////////////////////////////////
 int main()
 {
+   dahl::iris::Logger log_("Main");
    // Create the main window
    sf::RenderWindow App(sf::VideoMode(800, 600, 32), "SFML OpenGL");
 
@@ -48,7 +51,7 @@ int main()
    glLoadIdentity();
    gluPerspective(90.f, 1.f, 1.f, 300.0f);//fov, aspect, zNear, zFar
 
-   bool rotate = false;
+   bool rotate = true;
    float angle;
 
    // Start game loop
@@ -63,11 +66,14 @@ int main()
             App.close();
 
          // Escape key : exit
-         if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
+         if ((Event.type == sf::Event::KeyPressed) &&
+             (Event.key.code == sf::Keyboard::Escape))
             App.close();
 
-         if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::A)){
+         if ((Event.type == sf::Event::KeyPressed) &&
+             (Event.key.code == sf::Keyboard::A)){
             rotate = !rotate;
+            log_.Info() << "Change rotation";
          }
       }
 
