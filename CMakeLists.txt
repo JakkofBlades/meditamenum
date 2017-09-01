@@ -5,7 +5,8 @@ cmake_minimum_required(VERSION 2.8.9)
 # Enable debug symbols by default
 # must be done before project() statement
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING
+    "Choose the type of build (Debug or Release)" FORCE)
 endif()
 # (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
@@ -24,6 +25,8 @@ include_directories("${PROJECT_BINARY_DIR}")
 set(EXECUTABLE_NAME "myproject")
 add_executable(${EXECUTABLE_NAME}
   src/logger.cpp
+  src/utility.cpp
+  src/command.cpp
   src/input.cpp
   src/game.cpp
   main.cpp)

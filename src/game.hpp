@@ -3,6 +3,7 @@
 
 
 #include "logger.hpp"
+#include "utility.hpp"
 #include "input.hpp"
 
 class Game
@@ -16,9 +17,12 @@ public:
    void Update();
    void Render();
 
+   void DrawQuad(float size, float pos);
    void DrawRotatingCube();
 
 private:
+   void GenerateKeymap();
+
    sf::RenderWindow window_;
    sf::Clock game_clock_;
    dahl::iris::Logger log_;

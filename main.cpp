@@ -18,7 +18,7 @@
 
 #pragma comment(lib,"opengl32.lib")
 
-#include "src/Game.hpp"
+#include "src/game.hpp"
 
 ////////////////////////////////////////////////////////////
 /// Entry point of application
