@@ -1,0 +1,36 @@
+#+TITLE: Useful Game Info
+#+AUTHOR: Sam Dahlberg, Cameron Holt
+
+* Common Build Errors
+** Windows ERROR define
+   Windows defines ERROR as something we cannot use.  Logger class used to use
+   ERROR as an enum type, but kept getting overriden by the define and confused
+   the compiler.  Solution was to replace ERROR with ERR.  Other possible
+   solution would be to undefine ERROR, but that might cause other issues.
+
+* Code Conventions
+** Bracket Style
+   I like to C style braces for functions, classes, conditionals and
+   loops. Each brace is on its own line.
+   #+BEGIN_SRC C++
+     void function(void)
+     {
+        // Code
+     }
+   #+END_SRC
+
+   Braces will always be used for conditionals and loops, even if they are
+   followed by only one statement. Single line conditionals and loops are
+   allowed.
+   #+BEGIN_SRC C++
+     if(condition) { statement; }
+
+     if(condition)
+     {
+        statement();
+     }
+   #+END_SRC
+* Design Plans
+** Procedurally Generated Patterns
+   * [ ] I want to procedurally generate different falling patterns.
+   * [ ] I want to have multiple patterns on screen at once

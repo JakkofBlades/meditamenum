@@ -28,7 +28,7 @@ int InputController::HandleKeyPress(sf::Event event)
          if (cmd->second->isRepeated())
          {
             cmd->second->Execute();
-            log_.Warn() << command;
+            // log_.Warn() << command;
          }
       }
    }
@@ -55,7 +55,7 @@ int InputController::HandleKeyRelease(sf::Event event)
 
          if(cmd != global_key_map.end())
          {
-            log_.Warn() << command;
+            // log_.Warn() << command;
 
             if(!cmd->second->isRepeated())
             {

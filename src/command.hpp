@@ -3,6 +3,9 @@
 
 #include "logger.hpp"
 
+#include <SFML/Graphics.hpp>
+#include <SFML/OpenGL.hpp>
+
 class Command
 {
 public:
@@ -19,6 +22,8 @@ protected:
 private:
 };
 
+
+// Null Command
 class NullCommand : public Command
 {
 public:
@@ -31,6 +36,7 @@ private:
 };
 
 
+// Print command
 class PrintCommand : public Command
 {
 public:
@@ -40,6 +46,22 @@ public:
    virtual void Undo();
 
 private:
+   dahl::iris::Logger log_;
+};
+
+// Move command
+class MoveCommand : public Command
+{
+public:
+   MoveCommand(sf::Sprite* entity, sf::Vector2f magnitude);
+
+   virtual void Execute();
+   virtual void Undo();
+
+private:
+   sf::Sprite* entity_;
+   sf::Vector2f magnitude_;
+
    dahl::iris::Logger log_;
 };
 
